@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "../includes/meta.html" %}
+</head>
+<body>
+   <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <h3>E<span>xperiment</span></h3>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                <h4>{{ user.username }}</h4>
+                <small>Role</small>
+            </div>
+
+            {% include "../includes/sidebar.html" %}
+        </div>
+    </div>
+    
+    <div class="main-content">
+
+        {% include "../includes/header.html" %}
+        <main>
+            
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <small>Home / Disease Detail</small>
+            </div>
+            
+            <div class="page-content">
+            
+                <div class="records table-responsive">
+
+                    <div>
+                        <table width="100%">
+
+                            {% if tomato %}
+                            <thead>
+                                <tr>
+                                    <th>{{tomato.name}} Disease</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            
+                                <tr>
+                                    
+                                    <td>
+                                        Variety: {{tomato.variety}} <br/>
+                                        Spot Size: {{tomato.spot_size}} <br/>
+                                        Color: {{tomato.spot_color}} <br/>
+                                        Distribution: {{tomato.spot_dist}} <br/>
+                                        Texture: {{tomato.leaf_texture}} <br/>
+                                        Health : {{tomato.overall_health}} <br/>
+                                        Neaby Plant Observation: {{tomato.nearby_plant_observations}} <br/>
+                                        Pest activities: {{tomato.recent_pest_activities}} <br/>
+                                        Diagonosis: {{tomato.diagnosis}} <br/>
+                                    </td>
+                                   
+                                </tr>
+                             
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                    </div>
+
+                </div>
+            
+            </div>
+            
+        </main>
+        
+    </div>
+</body>
+</html>

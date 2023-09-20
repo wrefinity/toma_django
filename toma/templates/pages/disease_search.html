@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "../includes/meta.html" %}
+</head>
+<body>
+   <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <h3>E<span>xperiment</span></h3>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                <h4>{{ user.username }}</h4>
+                <small>Role</small>
+            </div>
+
+            {% include "../includes/sidebar.html" %}
+        </div>
+    </div>
+    
+    <div class="main-content">
+
+        {% include "../includes/header.html" %}
+        <main>
+            
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <small>Home / Dashboard</small>
+            </div>
+            
+            <div class="page-content">
+            
+                <div class="records table-responsive">
+
+                    <div class="toma-container">
+                        <div class="login-header">
+                            <h2>PREDICT TOMATOES DISEASE</h2>
+                        </div>
+                        <form action="" method="GET" class="toma-section">
+                            {% csrf_token %}
+                            <div class="toma-left">
+                                {% csrf_token %}
+                                <!-- Add a hidden input field for the search query 'q' -->
+                                <input type="hidden" name="q" value="all">
+                                <div class="form-group">
+                                    <label for="variety">Variety</label>
+                                    <select name="variety" id="variety" >
+                                        <option value=" roma">Roma</option>
+                                        <option value="cherry">Cherry</option>
+                                        <option value="beefsteak">Beefsteak</option>
+                                        <option value="heirloom">Heirloom</option>
+                                        <option value="plum">Plum</option>
+                                        <option value="grape">Grape</option>
+                                        <option value="yellow-pear">Yellow Pear</option>
+                                        <option value="celebrity">Celebrity</option>
+                                        <option value="san-marzano">San Marzano</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="name">Number of Month:</label>
+                                    <input type="number" id="age" name="age">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Climate:</label>
+                                    <select name="location" id="location">
+                                        <option value="Tropical Climate">Tropical Climate</option>
+                                        <option value="Subtropical Climate">Subtropical Climate</option>
+                                        <option value="Temperate Climate">Temperate Climate</option>
+                                        <option value="Continental Climate">Continental Climate</option>
+                                        <option value="Polar Climate">Polar Climate</option>
+                                        <option value="Desert Climate">Desert Climate</option>
+                                        <option value="Mediterranean Climate">Mediterranean Climate</option>
+                                        <option value="Monsoon Climate">Monsoon Climate</option>
+                                        <option value="Mountain Climate">Mountain Climate</option>
+                                        <option value="Marine Climate">Marine Climate</option>
+                                        <option value="Savannah Climate">Savannah Climate</option>
+                                        <option value="Alpine Climate">Alpine Climate</option>
+                                        <option value="Equatorial Climate">Equatorial Climate</option>
+                                        <option value="Steppe Climate">Steppe Climate</option>
+                                        <option value="Humid Subtropical Climate">Humid Subtropical Climate</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="color"> Color:</label>
+                                    <select name="color" id="color">
+                                        <option value="red">Red</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="orange">Orange</option>
+                                        <option value="green">Green</option>
+                                        <option value="pink">Pink</option>
+                                        <option value="purple">Purple</option>
+                                        <option value="black">Black</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="striped">Striped</option>
+                                        <option value="multicolored">Multicolored</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="spot_color"> Leaf Spot Color: </label>
+                                    <select name="spot_color" id="spot_color">
+                                        <option value="Red">Red</option>
+                                        <option value="Yellow">Yellow</option>
+                                        <option value="Brown">Brown</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Green">Green</option>
+                                        <option value="Purple">Purple</option>
+                                        <option value="White">White</option>
+                                        <option value="Gray">Gray</option>
+                                    </select>
+                                </div>
+        
+        
+                                <div class="form-group">
+                                    <label for="spot_size"> Leaf Spot Size:</label>
+                                    <select name="spot_size" id="spot_size">
+                                        <option value="small">small</option>
+                                        <option value="medium">medium</option>
+                                        <option value="large">large</option>
+                                    </select>
+                                </div>
+        
+                            </div>
+                            <div class="toma-right">
+        
+                                <div class="form-group">
+                                    <label for="spot_dist"> Leaf Spot Distribution: </label>
+                                    <select name="spot_dist" id="spot_dist">
+                                        <option value="all over">all over</option>
+                                        <option value="scanty">scanty</option>
+                                        <option value="single">single</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="name">Leaf Texture:</label>
+                                    <input type="text" id="leaf_texture" name="leaf_texture" placeholder="leaf Texture"
+                                        required>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="overall_health"> Plant OverAll Health: </label>
+                                    <select name="overall_health" id="overall_health">
+                                        <option value="healthy">healthy</option>
+                                        <option value="unhealthy">unhealthy</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="spore_fungal">Presence of Fungal or Spores Growth</label>
+                                    <select name="spore_fungal" id="spore_fungal">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Onset Time:</label>
+                                    <input type="date" id="onset_time" name="onset_time">
+                                </div>
+        
+                                <div class="form-group">
+                                    <button type="submit"> ADD </button>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+
+                    <div>
+                        <table width="100%">
+
+                            {% if tomatoes %}
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th><span class="las la-sort"></span> Descriptions</th>
+                                    <th><span class="las la-sort"></span> Measurements/Texture/Color/ </th>
+                                    <th><span class="las la-sort"></span> Health</th>
+                                    <th><span class="las la-sort"></span> Nearby Observation</th>
+                                    <th><span class="las la-sort"></span> Fungal/Spore</th>
+                                    <th><span class="las la-sort"></span> Pest Activities</th>
+                                    <th><span class="las la-sort"></span> Disease History</th>
+                                    <th><span class="las la-sort"></span> ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for tomato in tomatoes %}
+                                <tr>
+                                    <td>{{tomato.id}}</td>
+                                    <td>
+                                        <div class="client">
+                                           <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                                            <div class="client-info">
+                                                <h4>{{tomato.name}}</h4>
+                                                <small>{{tomato.variety}}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Spot Size: {{tomato.spot_size}}
+                                        Color: {{tomato.spot_color}}
+                                        Distribution: {{tomato.spot_dist}}
+                                        Texture: {{tomato.leaf_texture}}
+                                    </td>
+                                    <td>
+                                        {{tomato.overall_health}}
+                                    </td>
+                                    <td>
+                                        {{tomato.nearby_plant_observations}}
+                                    </td>
+                                    <td>
+                                        {{tomato.spore_fungal}}
+                                    </td>
+                                    <td>
+                                        {{tomato.recent_pest_activities}}
+                                    </td>
+                                    <td>
+                                        {{tomato.disease_history}}
+                                    </td>
+                                    <td>
+                                        <div class="actions">
+                                            <span class="lab la-telegram-plane"></span>
+                                            <a href = "{% url 'detail-tomatoes' tomato.id%}">
+                                                <span class="las la-eye"></span>
+                                            </a>
+                                            <!-- <span class="las la-ellipsis-v"></span> -->
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+
+                            {% else %}
+                                <p>No results found.</p>
+                            {% endif %}
+
+                        </table>
+                    </div>
+
+                </div>
+            
+            </div>
+            
+        </main>
+        
+    </div>
+</body>
+</html>

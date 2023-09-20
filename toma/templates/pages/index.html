@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "../includes/meta.html" %}
+</head>
+<body>
+    
+
+        
+<div class="main-index">
+
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Login</h2>
+        </div>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Username:</label>
+                <input type="text" id="email" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <div class="form-group">
+                <a href="{% url 'register' %}" class="btn-reg">
+                    Register
+                </a>
+            </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+</html>

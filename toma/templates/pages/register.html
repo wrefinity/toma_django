@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "../includes/meta.html" %}
+</head>
+<body>
+    
+
+        
+<div class="main-index">
+
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Register</h2>
+        </div>
+        <form action="/register" method="POST">
+            {% csrf_token %}
+            <!-- <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div> -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn-reg">Register</button>
+            </div>
+
+            <div class="form-group">
+                <a href='/' class="btn-reg">
+                    Login
+                </a>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

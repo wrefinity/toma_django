@@ -1,0 +1,37 @@
+<div class="side-menu">
+    <ul>
+        <li>
+           <a  href="{% url 'home' %}" class="active">
+                <span class="las la-home"></span>
+                <small>Dashboard</small>
+            </a>
+        </li>
+        {% if user.username == "admin" %}
+        <li>
+           <a href="{% url 'disease_create' %}">
+                <span class="las la-user-alt"></span>
+                <small>Profile</small>
+            </a>
+        </li>
+        <li>
+           <a href="{% url 'disease_create' %}">
+                <span class="las la-clipboard-list"></span>
+                <small>Add Disease</small>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'list-tomatoes' %}">
+                 <span class="las la-clipboard-list"></span>
+                 <small>Tomatoes</small>
+             </a>
+         </li>
+         {% endif %}
+        <li>
+           <a href="{% url 'multi-field-search-tomatoes' %}">
+                <span class="las la-tasks"></span>
+                <small>Query Disease</small>
+            </a>
+        </li>
+
+    </ul>
+</div>
