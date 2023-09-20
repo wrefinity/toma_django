@@ -28,3 +28,17 @@ django-admin startproject my_app
 cd my_app
 python3 manage.py runserver
 ```
+
+
+# working with the project
+
+```
+# step 1
+git clone https://github.com/wrefinity/toma_django.git
+
+# step 2
+cd toma && pip install -r reequirements.txt
+
+# step 3
+python manage.py runserver
+```
