@@ -53,6 +53,7 @@ class HomePageView(View):
 
 
 class LogoutView(View):
-    def post(self, request):
+
+    def get(self, request):
         auth.logout(request)
-        return redirect('home')
+        return redirect('login')
