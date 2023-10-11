@@ -1,14 +1,24 @@
-### MAC USERS
+### Tomatoes prediction
+
+#### note window users are expected to use gitbash terminal
 ```
-# Create virtual env
-python3 -m venv env
-# activate enviroment
+# Create virtual env (Window/Mac)
+python -m venv env
+
+# activate enviroment (Mac/Linux)
 source env/bin/activate
+
+# activate enviroment (Window)
+. env/Scripts/activate
 ```
 
 ## to run the project
 ```
-cd toma && pip install -r requirements.txt
+# changer directory to toma
+cd toma
+
+pip install -r requirements.txt
+
 python manage.py runserver
 ```
 
@@ -37,7 +47,7 @@ python3 manage.py runserver
 git clone https://github.com/wrefinity/toma_django.git
 
 # step 2
-cd toma && pip install -r reequirements.txt
+cd toma && pip install -r requirements.txt
 
 # step 3
 python manage.py runserver
